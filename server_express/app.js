@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+let loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(path.dirname(__dirname), "client")));
 //responsive connection with front-end
 app.use('/v1', indexRouter);
 app.use('/users', usersRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

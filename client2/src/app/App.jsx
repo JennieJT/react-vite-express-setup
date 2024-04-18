@@ -27,10 +27,12 @@ function App() {
 
   return (
     <>
+   
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+      <h2> ∞ Infinity Hope ∞ </h2>
+        {/* <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button>
+        </button> */}
       </div>
       <div className="login-form-container">
       <ThemeProvider theme = {theme}>

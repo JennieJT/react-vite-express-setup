@@ -49,10 +49,10 @@
 }
 
  .login-form-container {
-  width: 30%;
+  width: 25%;
   margin-left:auto;
   background-color: rgba(220, 220, 220, 0.5);
-  padding:2rem;
+  padding:1rem 2rem 2rem 2rem;
   z-index: 0;
-  margin-right: 6rem;
+  margin-right: 10rem;
 }
