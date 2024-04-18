@@ -1,8 +1,10 @@
 {
   "dependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "install": "^0.13.0",
+    "npm": "^10.5.2"
   },
   "scripts": {
-    "start": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\""
+    "start": "concurrently \"cd ./server_express && npm start\" \"cd ./client2 && npm run dev\""
   }
 }

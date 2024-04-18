@@ -1,0 +1,58 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+
+    background-image: url("../../public/backgroundLogin.jpg"); /* Replace with your image path */
+    background-repeat: no-repeat; /* Prevent image tiling */
+    background-position: bottom; /* Center the image */
+    background-size: cover; /* Resize image to cover the container */
+    position: fixed; /* Fix the background to the viewport */
+    bottom: -1;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Set container size to cover viewport */
+    z-index: 2;
+
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  z-index: 0;
+  width: 40%;
+  margin-left:auto;
+  z-index: 0;
+  margin-right: 3rem;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+ .login-form-container {
+  width: 30%;
+  margin-left:auto;
+  background-color: rgba(220, 220, 220, 0.5);
+  padding:2rem;
+  z-index: 0;
+  margin-right: 6rem;
+}
