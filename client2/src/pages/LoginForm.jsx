@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { signIn } from '../features/session/sessionSlice.js';
+//styles
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import { loginSuccess, loginFailure } from '../app/store.jsx'; // Relative path
 import GoogleIcon from '@mui/icons-material/Google';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import {
@@ -12,6 +14,9 @@ import {
     alpha,
     getContrastRatio,
 } from '@mui/material/styles';
+//logic
+//import { loginSuccess, loginFailure } from '../app/store.jsx'; // Relative path
+//routing
 import axios from 'axios';
 
 const violetBase = '#7F00FF';
@@ -46,30 +51,33 @@ const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
-
-            try {
-              // Simulate login (replace with actual authentication logic)
-              const response = await axios.post('/api/login', {
+        try {
+            // Simulate login (replace with actual authentication logic)
+            const response = await axios.post('/api/login', {
                 username,
                 password,
-              });
-          
-              if (!response.data.success) { // Assuming response has a success property
-                throw new Error(response.data.message || 'Login failed'); // Handle specific error message if available
-              }
-          
-              const user = response.data.user; // Assuming response has user data in a 'user' property
-              dispatch(loginSuccess(user)); // Update Redux state on success
-            } catch (error) {
-              dispatch(loginFailure(error.message)); // Update Redux state on error
+            });
+
+            if (!response.data.data.success) { // Assuming response has a success property
+                throw new Error(response.data.data.message || 'Login failed'); // Handle specific error message if available
             }
+            //successful
+            const user = response.data.user;
+            dispatch(signIn({ username: user.username }));
+            // imperatively redirect the user to /profile
+            navigate('/');
+        } catch (error) {
+            alert(error.message); // Update Redux state on error
+        }
     };
 
     return (
+
         <ThemeProvider theme={theme}>
             <form onSubmit={handleLogin}>
 

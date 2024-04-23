@@ -1,21 +1,10 @@
 #root {
-  max-width: 1280px;
+  min-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   display:flex;
   flex-direction: column;
-
-    background-image: url("../../public/backgroundLogin.jpg"); /* Replace with your image path */
-    background-repeat: no-repeat; /* Prevent image tiling */
-    background-position: bottom; /* Center the image */
-    background-size: cover; /* Resize image to cover the container */
-    position: fixed; /* Fix the background to the viewport */
-    bottom: -1;
-    left: 0;
-    width: 100vw;
-    height: 100vh; /* Set container size to cover viewport */
-    z-index: 2;
+  width: 100vw;
 
 }
 
@@ -48,11 +37,19 @@
   color: #888;
 }
 
- .login-form-container {
-  width: 25%;
+.main-container{
+display: flex; 
+}
+
+.left-container {
+  width: 20%;
+}
+
+ .right-container {
+  width: 72%;
   margin-left:auto;
   background-color: rgba(220, 220, 220, 0.5);
   padding:1rem 2rem 2rem 2rem;
   z-index: 0;
-  margin-right: 10rem;
+  margin-right: 2%;
 }
