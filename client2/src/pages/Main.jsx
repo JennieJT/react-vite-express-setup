@@ -32,13 +32,14 @@ const Main = () => {
                     <h1>Infinite Hope</h1>
                     {(loggedIn) ? <>
                         <h2>Welcome, {user.username}</h2>
+                        <Outlet />
                         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                     </>
 
                         :
                         <>
                             <Navigate to="/signin" />
-                            <Outlet />
+                           
                         </>
                     }
                 </div>
